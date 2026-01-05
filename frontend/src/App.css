@@ -1,0 +1,135 @@
+.app {
+  text-align: center;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .top-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+  }
+}
+
+/* Join section */
+.join-section {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.join-section input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  min-width: 200px;
+}
+
+/* Status text */
+.status-panel {
+  text-align: left;
+  max-width: 480px;
+}
+
+.status-label {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
+}
+
+.result-message {
+  margin-top: 6px;
+  color: #0f766e;
+}
+
+/* Main layout */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .main-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Board */
+.board-wrapper {
+  padding: 16px;
+  background: #1e293b;
+  border-radius: 8px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  gap: 8px;
+  justify-content: center;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  border: 1px solid #334155;
+  cursor: pointer;
+}
+
+.cell:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Players */
+.player1 {
+  background: red;
+}
+
+.player2 {
+  background: yellow;
+}
+
+/* Sidebar / leaderboard */
+.sidebar {
+  min-width: 220px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  text-align: left;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.sidebar li {
+  padding: 4px 0;
+  font-size: 0.9rem;
+}
