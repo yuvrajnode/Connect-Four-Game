@@ -1,28 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-// Board size
+//board size as per assignment 
 const ROWS = 6;
 const COLS = 7;
 
 function App() {
-  // =====================
-  // STATE
-  // =====================
   const [username, setUsername] = useState("");
   const [board, setBoard] = useState(
     Array.from({ length: ROWS }, () => Array(COLS).fill(0))
   );
-  const [gameMessage, setGameMessage] = useState("");
+  const [gameMessage, setGameMessage] = useState("");//for game win or loss result 
   const [leaderboard, setLeaderboard] = useState({});
-  const [statusMessage, setStatusMessage] = useState("Enter a username to join a game.");
+  const [statusMessage, setStatusMessage] = useState("Enter a username to join a game.");//mainly for connection 
 
   const [isConnected, setIsConnected] = useState(false);
 
-  // =====================
-  // SOCKET REF (IMPORTANT)
-  // =====================
-  const socketRef = useRef(null);
+  const socketRef = useRef(null);//so that websocket should not re-renders 
 
   const fetchLeaderboard = () => {
     fetch("http://localhost:3001/leaderboard")
@@ -31,9 +25,6 @@ function App() {
       .catch(() => {});
   };
 
-  // =====================
-  // WEBSOCKET LISTENER
-  // =====================
   useEffect(() => {
     return () => {
       if (socketRef.current) {
@@ -43,9 +34,6 @@ function App() {
     };
   }, []);
 
-  // =====================
-  // JOIN GAME
-  // =====================
   const joinGame = () => {
     if (!username || socketRef.current) return;
 
@@ -92,9 +80,6 @@ function App() {
     socketRef.current = ws;
   };
 
-  // =====================
-  // MAKE A MOVE
-  // =====================
   const makeMove = (columnIndex) => {
     const socket = socketRef.current;
     if (!socket) return;
@@ -107,9 +92,6 @@ function App() {
     );
   };
 
-  // =====================
-  // UI
-  // =====================
   return (
     <div className="app">
       <h1>4 in a Row</h1>
