@@ -8,7 +8,7 @@ Players can compete against each other in real time or play against a **competit
 ![WebSockets](https://img.shields.io/badge/realtime-WebSockets-orange.svg)
 
 ---
-# Deployment Link :-
+**Live demo →** [connect-four-game-sable.vercel.app](https://connect-four-game-sable.vercel.app)
 
 ---
 
