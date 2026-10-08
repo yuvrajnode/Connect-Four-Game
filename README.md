@@ -7,6 +7,8 @@ Players can compete against each other in real time or play against a **competit
 ![Node.js](https://img.shields.io/badge/backend-Node.js-green.svg)
 ![WebSockets](https://img.shields.io/badge/realtime-WebSockets-orange.svg)
 
+> Implementation note: the running server uses the native `ws` library and an in-memory leaderboard. A PostgreSQL helper exists in the repository, but the current game server does not use it for persistence.
+
 ---
 **Live demo →** [connect-four-game-sable.vercel.app](https://connect-four-game-sable.vercel.app)
 
